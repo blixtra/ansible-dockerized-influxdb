@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: blixtra
+  description: InfluxDB
+  license: MIT
+  min_ansible_version: 1.8
+  platforms:
+  - name: Ubuntu
+  versions:
+  - trusty
+  categories:
+  - cloud
+  - database
+  - database:nosql

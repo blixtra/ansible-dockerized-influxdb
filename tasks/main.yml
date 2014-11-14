@@ -1,0 +1,18 @@
+---
+# tasks file for influxdb
+
+- name: "Create volume container"
+  docker:
+    image: busybox
+    volumes: "{{ volume_path }}"
+    name: "{{ volume_name }}"
+    docker_api_version: "{{ docker_api_version }}"
+
+- name: "Install Influxdb Docker container"
+  docker:
+    image: "{{ image_name }}"
+    volumes_from: "{{ volume_name }}"
+    ports: "{{ port_list | join(',') }}"
+    name: "{{ container_name }}"
+    docker_api_version: "{{ docker_api_version }}"
+    env: "{{  master_influx | default(omit) }}"

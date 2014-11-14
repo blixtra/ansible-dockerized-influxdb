@@ -1,0 +1,20 @@
+---
+# defaults file for influxdb
+
+image_name: blixtra/influxdb
+container_name: influxdb
+volume_name: "{{container_name}}-volume"
+volume_path: /data/
+admin_port: 8083
+http_port: 8086
+https_port: 8084
+raft_port: 8090
+protobuf_port: 8099
+docker_api_version: 1.12
+
+port_list:
+  - "{{ admin_port }}:8083"
+  - "{{ http_port }}:8086"
+  - "{{ admin_port }}:8084"
+  - "{{ raft_port }}:8090"
+  - "{{ protobuf_port }}:8099"
