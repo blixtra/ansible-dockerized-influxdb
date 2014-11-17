@@ -15,6 +15,6 @@ docker_api_version: 1.12
 port_list:
   - "{{ admin_port }}:8083"
   - "{{ http_port }}:8086"
-  - "{{ admin_port }}:8084"
+  - "{{ https_port }}:8084"
   - "{{ raft_port }}:8090"
   - "{{ protobuf_port }}:8099"
